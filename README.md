@@ -28,7 +28,7 @@ Installation
         }
     ],
     "require":{
-        "barthuttinga/phphighcharts": "dev-master"
+        "barthuttinga/odconverter": "dev-master"
     }
 }
 ```
@@ -51,3 +51,8 @@ $odtFile = 'file.odt';
 $converter = new Converter('/usr/bin/soffice');
 $pdfFile = $converter->convert($odtFile, 'pdf');
 ```
+
+Reporting an issue or a feature request
+---------------------------------------
+
+Issues and feature requests are tracked in the [GitHub issue tracker](https://github.com/barthuttinga/odconverter/issues).
