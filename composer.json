@@ -1,0 +1,21 @@
+{
+	"name" : "barthuttinga/odconverter",
+	"type" : "library",
+	"description" : "PHP wrapper for LibreOffice's document conversion feature",
+	"keywords" : [
+		"open document",
+		"conversion",
+		"php"
+	],
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Bart Huttinga",
+			"email" : "barthuttinga@gmail.com"
+		}
+	],
+	"autoload" : {
+		"psr-0" : {
+			"ODConverter\\" : "lib/barthuttinga/"
+		}
+	}
+}
