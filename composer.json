@@ -1,5 +1,5 @@
 {
-	"name" : "barthuttinga/odconverter",
+	"name" : "qaraqter/odconverter",
 	"type" : "library",
 	"description" : "PHP wrapper for LibreOffice's document conversion feature",
 	"keywords" : [
@@ -10,12 +10,12 @@
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Bart Huttinga",
-			"email" : "barthuttinga@gmail.com"
+			"email" : "bart@qaraqter.nl"
 		}
 	],
 	"autoload" : {
 		"psr-0" : {
-			"ODConverter\\" : "lib/barthuttinga/"
+			"ODConverter\\" : "lib/"
 		}
 	}
 }
