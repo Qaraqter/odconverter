@@ -10,14 +10,25 @@ class Converter
         $this->officeBinary = $officeBinary;
     }
 
-    public function convert($file, $format)
+    public function convert($file, $format, $outputDir = '.')
     {
+        $outputDir = realpath($outputDir);
+
         $base = pathinfo($file, PATHINFO_FILENAME);
         $ext = pathinfo($file, PATHINFO_EXTENSION);
 
-        $command = "$this->officeBinary --headless --convert-to $format $file";
-        exec($command);
+        $command = sprintf('%s --headless --convert-to %s --outdir %s %s 2>&1', $this->officeBinary, $format, $outputDir, $file);
 
-        return "$base.$format";
+        // Environment variable HOME should be set to a location that is
+        // writable for the current user. By default Apache has no HOME set.
+        exec('echo $HOME', $output);
+        $home = $output[0];
+        if (!$home) {
+            $command = sprintf('export HOME=%s; %s; unset HOME', $outputDir, $command);
+        }
+
+        exec($command, $output, $value);
+
+        return "$outputDir/$base.$format";
     }
 }
