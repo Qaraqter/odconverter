@@ -15,7 +15,6 @@ class Converter
         $outputDir = realpath($outputDir);
 
         $base = pathinfo($file, PATHINFO_FILENAME);
-        $ext = pathinfo($file, PATHINFO_EXTENSION);
 
         $command = sprintf('%s --headless --convert-to %s --outdir %s %s 2>&1', $this->officeBinary, $format, $outputDir, $file);
 
