@@ -22,8 +22,8 @@ class Converter
         // writable for the current user. By default Apache has no HOME set.
         exec('echo $HOME', $output);
         $home = $output[0];
-        if (!$home) {
-            $command = sprintf('export HOME=%s; %s; unset HOME', $outputDir, $command);
+        if (! $home) {
+            $command = sprintf('(export HOME=%s; %s)', $outputDir, $command);
         }
 
         exec($command, $output, $value);
